@@ -19,15 +19,14 @@ bool find_k_as_sum(int k, vector<int> vec){
     unordered_set<int> scanned_nr;
 
     for (int i: vec){
-        if(i>k) continue;
-        else{
-            if(scanned_nr.count(k-i)>0){
-                return true;
-            }else
-            {
-                if(scanned_nr.count(i) == 0) scanned_nr.insert(i);
-            }
+
+        if(scanned_nr.count(k-i)>0){
+            return true;
+        }else
+        {
+            if(scanned_nr.count(i) == 0) scanned_nr.insert(i);
         }
+    
     }
 
     return false;
