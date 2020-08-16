@@ -35,12 +35,32 @@ vector<long long> product_of_rest(vector<int> a){
 
 }
 
+
+vector<long long> product_of_rest_with_div(vector<int> a){
+    int s = a.size();
+
+    long long prod = 1;
+
+    for (int i=0; i<s; i++){
+        prod *= (long long) a[i];
+    }
+
+    vector<long long> result;
+
+    for(int i=0; i<s; i++)
+        result.push_back(prod/((long long)a[i]));
+
+    return result;
+
+}
+
 int main(){
 
     vector<int> a = {1, 2, 3, 4, 5};
     vector<int> b = {3,2,1};
 
-    vector<long long> res = product_of_rest(b);
+    //vector<long long> res = product_of_rest(b);
+    vector<long long> res = product_of_rest_with_div(a);
 
     for (long long n: res)
         std::cout << n << " ";
