@@ -17,7 +17,7 @@ def segregate(arr, size):
 
 def find_missing(arr, size):
     for i in range(size):
-        if(arr[i] - 1 < size and arr[arr[i]-1] > 0):
+        if(abs(arr[i]) - 1 < size and arr[abs(arr[i])-1] > 0):
             arr[arr[i] - 1] = -arr[arr[i]-1]
 
     for i in range(size):
